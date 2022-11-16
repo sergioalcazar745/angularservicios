@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="my-5">Personas</h1>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Edad</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personas">
+                <td>{{persona.Nombre}}</td>
+                <td>{{persona.Email}}</td>
+                <td>{{persona.Edad}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
