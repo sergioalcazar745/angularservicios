@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComicComponent } from './components/comic/comic.component';
 import { LibreriaComponent } from './components/libreria/libreria.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,6 +16,9 @@ import { EmpleadosService } from './services/empleados.service';
 import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
 import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
 import { PlantillaComponent } from './components/plantilla/plantilla.component';
+import { PlantillaService } from './services/plantilla.service';
+import { EmpleadosroutingComponent } from './components/empleadosrouting/empleadosrouting.component';
+import { EmpleadosroutingDetalleComponent } from './components/empleadosrouting-detalle/empleadosrouting-detalle.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +31,17 @@ import { PlantillaComponent } from './components/plantilla/plantilla.component';
     PersonasapiComponent,
     EmpleadossalarioComponent,
     EmpleadosoficioComponent,
-    PlantillaComponent
+    PlantillaComponent,
+    EmpleadosroutingComponent,
+    EmpleadosroutingDetalleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing,
-    HttpClientModule
+    HttpClientModule 
   ],
-  providers: [appRoutingProviders, ComicsService, PersonasService, EmpleadosService],
+  providers: [appRoutingProviders, ComicsService, PersonasService, EmpleadosService, PlantillaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngIf="empleado">
+        <h1 class="my-5">Empleado detalle {{empleado.idEmpleado}}</h1>
+        <h1>Apellido: {{empleado.apellido}}</h1>
+        <h1>Oficio: {{empleado.oficio}}</h1>
+        <h1>Salario: {{empleado.salario}}</h1>
+        <h1>Departamento: {{empleado.departamento}}</h1>
+        <a class="btn btn-danger" [routerLink]="['/empleados-routing']">Volver</a>
+    </div>
+</div>

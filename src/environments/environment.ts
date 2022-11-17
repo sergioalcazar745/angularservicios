@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   url: "https://servicioapipersonasmvcpgs.azurewebsites.net/",
   urlEmpleados: "https://apiempleadosfullstack.azurewebsites.net/",
+  urlPlantilla: "https://apiplantillacore.azurewebsites.net/"
 };
 
 /*

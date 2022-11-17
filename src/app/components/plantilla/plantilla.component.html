@@ -1,1 +1,46 @@
-<p>plantilla works!</p>
+<div class="container">
+    <h1 class="my-5">Plantillas funciones</h1>
+    <form #funcionForm="ngForm" (ngSubmit)="getPlantillaByFuncion()">
+        <label class="form-label">Selecciona la funcion</label>
+        <select name="selectfunciones" class="form-select" #selectfunciones multiple>
+            <option *ngFor="let funcion of funciones">
+                {{funcion}}
+            </option>
+          </select>
+        <button class="btn btn-secondary mt-3">Aplicar</button>
+    </form>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div *ngIf="busqueda" class="my-3">
+        <h2 style="display: inline;">Busqueda: </h2>
+        <div style="display: inline;" *ngFor="let busq of busqueda">
+            <h1 style="display: inline;">{{busq}} </h1>
+        </div>        
+    </div>
+    <table class="table my-5" *ngIf="plantillas">
+        <thead>
+            <th>idEmpleado</th>
+            <th>idHospital</th>
+            <th>idSala</th>
+            <th>Apellido</th>
+            <th>Funcion</th>
+            <th>Turno</th>
+            <th>Salario</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plantilla of plantillas">
+                <td>{{plantilla.idEmpleado}}</td>
+                <td>{{plantilla.idHospital}}</td>
+                <td>{{plantilla.idSala}}</td>
+                <td>{{plantilla.apellido}}</td>
+                <td>{{plantilla.funcion}}</td>
+                <td>{{plantilla.turno}}</td>
+                <td>{{plantilla.salario}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

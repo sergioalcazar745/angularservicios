@@ -1,0 +1,8 @@
+<div class="container">
+    <h1 class="my-5">Maestro Detalle Empleados Routing</h1>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let empleado of empleados">
+            {{empleado.apellido}} | <a class="btn btn-success" [routerLink]="['/empleados-routing', empleado.idEmpleado]">Detalles</a>
+        </li>
+    </ul>
+</div>
