@@ -12,6 +12,10 @@ import { ComicsService } from './services/comics.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonasapiComponent } from './components/personasapi/personasapi.component';
 import { PersonasService } from './services/personas.service';
+import { EmpleadosService } from './services/empleados.service';
+import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
+import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
+import { PlantillaComponent } from './components/plantilla/plantilla.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { PersonasService } from './services/personas.service';
     HomeComponent,
     MenuComponent,
     ComicinyeccionComponent,
-    PersonasapiComponent
+    PersonasapiComponent,
+    EmpleadossalarioComponent,
+    EmpleadosoficioComponent,
+    PlantillaComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ import { PersonasService } from './services/personas.service';
     routing,
     HttpClientModule
   ],
-  providers: [appRoutingProviders, ComicsService, PersonasService],
+  providers: [appRoutingProviders, ComicsService, PersonasService, EmpleadosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

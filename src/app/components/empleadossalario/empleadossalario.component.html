@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="my-5">Empleados</h1>
+    <form #empleadosForm="ngForm" (ngSubmit)="mostrarEmpleadosSalario()" class="my-5">
+        <label>Introduzca salario:</label>
+        <input type="number" class="form-control" #cajasalario name="cajasalario"/>
+        <button class="btn btn-secondary mt-3">Buscar empleado</button>
+    </form>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <table class="table my-5">
+        <thead>
+            <th>Apellido</th>
+            <th>Oficio</th>
+            <th>Salario</th>
+            <th>Departamento</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empleado of listaEmpleados">
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.oficio}}</td>
+                <td>{{empleado.salario}}</td>
+                <td>{{empleado.departamento}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

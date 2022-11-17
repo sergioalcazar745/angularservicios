@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 class="my-5">Empleados oficio</h1>
+    <form #oficioForm="ngForm" (ngSubmit)="getEmpleadosByOficio()">
+        <label class="form-label">Selecciona el oficio</label>
+        <select #selectoficio name="selectoficio" class="form-select">
+            <option *ngFor="let oficio of oficios">
+                {{oficio}}
+            </option>
+        </select>
+        <button class="btn btn-secondary mt-3">Aplicar</button>
+    </form>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <table class="table my-5" *ngIf="listaEmpleados">
+        <thead>
+            <th>Apellido</th>
+            <th>Oficio</th>
+            <th>Salario</th>
+            <th>Departamento</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empleado of listaEmpleados">
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.oficio}}</td>
+                <td>{{empleado.salario}}</td>
+                <td>{{empleado.departamento}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
